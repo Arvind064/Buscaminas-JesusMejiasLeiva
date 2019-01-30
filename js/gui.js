@@ -243,6 +243,10 @@ let buscaMinasGUI = {
       } catch (e) {
         buscaMinasGUI.descubrirMinas();
         if (e.message === "¡¡¡ Felicidades has ganado !!!") {
+          buscaMinasGUI.claseSegunNivel(
+            "blanco",
+            element
+          );
           buscaMinasGUI.comprobarRecord();
           setTimeout(function(){
             buscaMinasGUI.swalVolverAJugar(e.message, "success");
