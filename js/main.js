@@ -238,7 +238,8 @@ export let buscaMinas = {
   actualizaCambios() {
     for (let i = 0; i < buscaMinas.filas; i++) {
       for (let j = 0; j < buscaMinas.columnas; j++) {
-        if (buscaMinas.tableroPulsaciones[i][j] === "p" && buscaMinas.tableroVisible[i][j] === "#" ) {
+        if ((buscaMinas.tableroPulsaciones[i][j] === "p" && buscaMinas.tableroVisible[i][j] === "#") ||
+         (buscaMinas.tableroPulsaciones[i][j] === "p" && buscaMinas.tableroVisible[i][j] === "!")  ) {
           buscaMinas.tableroVisible[i][j] = buscaMinas.tableroMaster[i][j];
         }
       }
@@ -447,7 +448,7 @@ export let buscaMinas = {
    */
 
   picar(i, j) {
-    if (buscaMinas.flagGanado || buscaMinas.flagFinPartida || buscaMinas.tableroPulsaciones[i][j] === "p") {
+    if (buscaMinas.flagGanado || buscaMinas.flagFinPartida || buscaMinas.tableroPulsaciones[i][j] === "p" || buscaMinas.tableroVisible[i][j] === "!" ) {
       return;
     }
 

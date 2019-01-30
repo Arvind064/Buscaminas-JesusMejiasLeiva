@@ -8,9 +8,12 @@ let $container;
 let $containerTablero;
 let $timer;
 let $time;
+let $elegirNivel;
 
 let init = function() {
-  $("#elegirNivel").change(buscaMinasGUI.initJuego);
+  $elegirNivel = $("#elegirNivel");
+  buscaMinasGUI.resetearElegirNivel();
+  $elegirNivel.change(buscaMinasGUI.initJuego);
   $("#instrucciones").click(buscaMinasGUI.abrirInstrucciones);
 
   $container = $("#container");
@@ -329,7 +332,7 @@ let buscaMinasGUI = {
       }
     }).then(result => {
       if (result === "Si") {
-        $("#elegirNivel").val("");
+        $elegirNivel[0].selectedIndex = 0;
         location.reload();
       }
     });
@@ -409,9 +412,12 @@ let buscaMinasGUI = {
 
     $("#btnVolverAjugar").click(()=> {
       // reseteamos el select
-      $("#elegirNivel").val("");
+      buscaMinasGUI.resetearElegirNivel();
       location.reload();
     });
+  },
+  resetearElegirNivel(){
+      return $elegirNivel[0].selectedIndex = 0;
   },
   /**
    * Limpia las clases del elemento pasado por parametro
