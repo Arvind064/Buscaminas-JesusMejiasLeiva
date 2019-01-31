@@ -335,7 +335,7 @@ let buscaMinasGUI = {
         No: true
       }
     }).then(result => {
-      if (result === "Si") {
+      if (result === "Sí") {
         $elegirNivel[0].selectedIndex = 0;
         location.reload();
       }
