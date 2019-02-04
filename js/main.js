@@ -31,7 +31,6 @@ export let buscaMinas = {
     buscaMinas.generarTableros();
     buscaMinas.generaMinas();
     buscaMinas.numerosAlrededorMinas();
-    //buscaMinas.mostrar();
   },
   /**
    * Muestra los tableros al inicio
@@ -58,7 +57,7 @@ export let buscaMinas = {
           buscaMinas.numBanderas--;
           // console.clear();
           // console.table(buscaMinas.tableroMaster);
-          // console.table(buscaMinas.tableroVisible);
+           console.table(buscaMinas.tableroVisible);
         }
       } else if (
         buscaMinas.tableroPulsaciones[x][y] !== "p" &&
@@ -146,9 +145,7 @@ export let buscaMinas = {
 
       }else{
 
-
         buscaMinas.seleccionaContiguas.clear();
-
 
         if (x > 0 && y > 0){
           if (buscaMinas.tableroVisible[x - 1][ y - 1] !== "!" && buscaMinas.tableroPulsaciones[x - 1][y - 1] !== "p"){
