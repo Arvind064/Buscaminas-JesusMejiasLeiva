@@ -8,12 +8,9 @@ let $container;
 let $containerTablero;
 let $timer;
 let $time;
-let $elegirNivel;
 
 let init = function() {
-  $elegirNivel = $("#elegirNivel");
-  buscaMinasGUI.resetearElegirNivel();
-  $elegirNivel.change(buscaMinasGUI.initJuego);
+  $("#elegirNivel").change(buscaMinasGUI.initJuego);
   $("#instrucciones").click(buscaMinasGUI.abrirInstrucciones);
 
   $container = $("#container");
@@ -166,6 +163,11 @@ let buscaMinasGUI = {
       }
     }
   },
+  actualizaNumBanderas(){
+      if ($("#pNumBanderas")){
+         $("#pNumBanderas").text(`${buscaMinas.numBanderas}`)
+      }
+  },
   /**
    * Actualiza la GUI con los valores del tablero visible interno
    */
@@ -175,6 +177,7 @@ let buscaMinasGUI = {
       return;
     }
 
+      buscaMinasGUI.actualizaNumBanderas();
 
       let cont = 0;
       for (const item of buscaMinas.aperturaCasillas) {
@@ -234,6 +237,7 @@ let buscaMinasGUI = {
 
     let coordenada = buscaMinasGUI.extraerCoordenada(element);
 
+
       try {
           buscaMinas.picar(coordenada.fila, coordenada.columna);
           if (!buscaMinas.flagGanado && !buscaMinas.flagFinPartida ){
@@ -243,11 +247,8 @@ let buscaMinasGUI = {
       } catch (e) {
         buscaMinasGUI.descubrirMinas();
         if (e.message === "¡¡¡ Felicidades has ganado !!!") {
-          buscaMinasGUI.claseSegunNivel(
-            "blanco",
-            element
-          );
           buscaMinasGUI.comprobarRecord();
+          buscaMinasGUI.claseSegunNivel("blanco", element);
           setTimeout(function(){
             buscaMinasGUI.swalVolverAJugar(e.message, "success");
           }, 4000);
@@ -259,6 +260,7 @@ let buscaMinasGUI = {
 
         }
       }
+
   },
   /**
    * Realiza la accion de picar y actualiza la GUI
@@ -284,9 +286,7 @@ let buscaMinasGUI = {
         }
         // actualizo el numero de banderas
 
-        if ($("#pNumBanderas")){
-           $("#pNumBanderas").text(`${buscaMinas.numBanderas}`)
-        }
+        buscaMinasGUI.actualizaNumBanderas();
 
     } catch (e) {
       buscaMinasGUI.descubrirMinas();
@@ -331,12 +331,12 @@ let buscaMinasGUI = {
       text: message + "¿Desea jugar de nuevo?",
       icon: icon,
       buttons: {
-        Si: true,
+        Sí: true,
         No: true
       }
     }).then(result => {
       if (result === "Sí") {
-        $elegirNivel[0].selectedIndex = 0;
+        $("#elegirNivel").val("");
         location.reload();
       }
     });
@@ -416,12 +416,9 @@ let buscaMinasGUI = {
 
     $("#btnVolverAjugar").click(()=> {
       // reseteamos el select
-      buscaMinasGUI.resetearElegirNivel();
+      $("#elegirNivel").val("");
       location.reload();
     });
-  },
-  resetearElegirNivel(){
-      return $elegirNivel[0].selectedIndex = 0;
   },
   /**
    * Limpia las clases del elemento pasado por parametro
@@ -492,7 +489,9 @@ let buscaMinasGUI = {
   comprobarRecord() {
     let tiempo = parseInt($("#timer p").text());
 
-    if (localStorage.getItem(buscaMinas.nivel) === null) {
+    console.log(localStorage.getItem(buscaMinas.nivel));
+    console.log(tiempo);
+    if (localStorage.getItem(buscaMinas.nivel) === null || localStorage.getItem(buscaMinas.nivel) > tiempo ) {
       localStorage.setItem(buscaMinas.nivel, tiempo);
     } else {
       if (
