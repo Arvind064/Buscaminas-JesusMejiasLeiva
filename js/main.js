@@ -30,7 +30,7 @@ export let buscaMinas = {
     buscaMinas.generarTableros();
     buscaMinas.generaMinas();
     buscaMinas.numerosAlrededorMinas();
-    buscaMinas.mostrar();
+    //buscaMinas.mostrar();
   },
   /**
    * Muestra los tableros al inicio
@@ -38,8 +38,8 @@ export let buscaMinas = {
   mostrar() {
     console.log("Tablero master \n");
     console.table(buscaMinas.tableroMaster);
-    console.log("Tablero visible \n");
-    console.table(buscaMinas.tableroVisible);
+    // console.log("Tablero visible \n");
+    // console.table(buscaMinas.tableroVisible);
   },
 
   /**
@@ -55,9 +55,9 @@ export let buscaMinas = {
         if (buscaMinas.numBanderas > 0) {
           buscaMinas.tableroVisible[x][y] = "!";
           buscaMinas.numBanderas--;
-          console.clear();
-          console.table(buscaMinas.tableroMaster);
-          console.table(buscaMinas.tableroVisible);
+          // console.clear();
+          // console.table(buscaMinas.tableroMaster);
+          // console.table(buscaMinas.tableroVisible);
         }
       } else if (
         buscaMinas.tableroPulsaciones[x][y] !== "p" &&
@@ -65,10 +65,10 @@ export let buscaMinas = {
       ) {
         buscaMinas.tableroVisible[x][y] = "#";
         buscaMinas.numBanderas++;
-        console.clear();
-        console.table(buscaMinas.tableroMaster);
-        console.table(buscaMinas.tableroVisible);
-        console.log(buscaMinas.numBanderas);
+        // console.clear();
+        // console.table(buscaMinas.tableroMaster);
+        // console.table(buscaMinas.tableroVisible);
+        // console.log(buscaMinas.numBanderas);
       }
       buscaMinas.comprobarGanadorBanderas();
   },
@@ -479,12 +479,12 @@ export let buscaMinas = {
       buscaMinas.abrirCeros(i, j);
       buscaMinas.cargarPulsacion(i, j);
       buscaMinas.actualizaCambios();
-      console.clear();
-      console.log("Tablero Master \n");
-      console.table(buscaMinas.tableroMaster);
-      console.log("Tablero Visible \n");
-      console.table(buscaMinas.tableroVisible);
-      console.table(buscaMinas.tableroPulsaciones);
+      // console.clear();
+      // console.log("Tablero Master \n");
+      // console.table(buscaMinas.tableroMaster);
+      // console.log("Tablero Visible \n");
+      // console.table(buscaMinas.tableroVisible);
+      // console.table(buscaMinas.tableroPulsaciones);
       buscaMinas.comprobarSiGana();
 
 
@@ -523,4 +523,5 @@ export let buscaMinas = {
       return;
     }
   }
+
 };

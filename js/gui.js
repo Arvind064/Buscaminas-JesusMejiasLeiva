@@ -14,6 +14,10 @@ let $timer;
 let $time;
 
 let init = function() {
+
+
+
+
   $("#elegirNivel").change(buscaMinasGUI.initJuego);
   $("#instrucciones").click(buscaMinasGUI.abrirInstrucciones);
 
@@ -43,7 +47,21 @@ let buscaMinasGUI = {
     buscaMinasGUI.volverAjugar();
     buscaMinasGUI.cssAlEmpezar();
     buscaMinasGUI.disableContextMenu();
+    buscaMinasGUI.mostrarTableros();
+
   },
+  /*
+  * Muestra el tablero con las minas
+  */
+  mostrarTableros(){
+    let buscaminas = function(){
+      return {
+        mostrar: () => buscaMinas.mostrar()
+      }
+    }();
+
+   window.buscaminas = buscaminas;
+ },
   abrirInstrucciones() {
     window.open("./instrucciones.html", "", "");
   },
