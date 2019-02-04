@@ -110,6 +110,7 @@ let buscaMinasGUI = {
           });
 
 
+
         $input.click(function(ev) {
           buscaMinasGUI.picarGui($(this));
         });
@@ -145,7 +146,7 @@ let buscaMinasGUI = {
    * @param classs clase que se le añadirá al input
    * @param input elemento al cuál se le añadirá la clase
    */
-  claseSegunNivel(classs, input, delay = "") {
+  claseSegunNivel(classs, input, delay = "", classsContigua = "") {
 
     switch (buscaMinas.nivel) {
       case "facil":
@@ -172,7 +173,25 @@ let buscaMinasGUI = {
     let coordenada = buscaMinasGUI.extraerCoordenada(element);
     try {
         buscaMinas.despejar(coordenada.fila, coordenada.columna);
-        buscaMinasGUI.actualizarGui();
+        if (!buscaMinas.flagGanado && !buscaMinas.flagFinPartida){
+          buscaMinasGUI.actualizarGui();
+        }
+
+        if (buscaMinas.seleccionaContiguas.size > 0){
+          for (let casilla of buscaMinas.seleccionaContiguas) {
+
+
+              $("#" + casilla).animate({
+                "background-color" : "#B39DDB"
+              }).animate({
+                "background-color" : "#4A148C"
+              })
+
+
+
+          }
+        }
+
     } catch (e) {
       buscaMinasGUI.descubrirMinas();
       if (e.message === "¡¡¡ Felicidades has ganado !!!") {
@@ -492,7 +511,6 @@ let buscaMinasGUI = {
     let $container = $("#container");
     let $div = $("<div></div>");
     $div.prop("id", "record");
-    $time.html(`<div id="record"></div>`);
 
     if (localStorage.getItem(buscaMinas.nivel) !== null) {
       $div.html(`<img src="images/record.svg" height="30px"/> ${localStorage.getItem(
@@ -530,7 +548,7 @@ let buscaMinasGUI = {
     let interv = setInterval(() => {
       if (!buscaMinas.flagFinPartida && !buscaMinas.flagGanado) {
         seconds++;
-        time.textContent = seconds;
+        $("#time").text(seconds);
       } else {
         clearInterval(interv);
         if (buscaMinas.flagGanado) {
