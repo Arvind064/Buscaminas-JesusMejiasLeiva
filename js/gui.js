@@ -2,6 +2,10 @@
  * Módulo GUI para el juego buscaminas
  * @author Jesús Mejías Leiva
  */
+
+ /*
+ * TODO: ARREGLAR COLOR DE LAS MINAS
+ */
 import { buscaMinas } from "./main.js";
 
 let $container;
@@ -381,7 +385,6 @@ let buscaMinasGUI = {
    */
   descubrirMinas() {
     buscaMinasGUI.eliminarBanderasGui();
-    let arrClassColores = ["gray", "marine","sky", "pink", "green-light", "lime", "teal-light", "lime-strong", "light-green-dark", "orange"]
     let cont = 0;
 
     for (let mina of buscaMinas.apeturaMinas) {
@@ -389,7 +392,7 @@ let buscaMinasGUI = {
       let $element = $("#" + mina);
 
       buscaMinasGUI.claseSegunNivel(
-        arrClassColores[Math.floor(Math.random() * ((arrClassColores.length - 1) - 0)) + 0],
+        "pink",
         $element,
         "delay-" + cont + "s"
       );
