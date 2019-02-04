@@ -315,7 +315,6 @@ let buscaMinasGUI = {
         buscaMinas.marcar(coordenada.fila, coordenada.columna);
         if (buscaMinas.tableroVisible[coordenada.fila][coordenada.columna] === "!" ){
           buscaMinasGUI.reproducirAudio("flag.mp3");
-          element.css("background-color", "");
           buscaMinasGUI.claseSegunNivel(
             "amarillo",
             element
@@ -471,6 +470,7 @@ let buscaMinasGUI = {
         element.prop("class") !== ""
       ) {
         element.prop("class", "");
+        element.css("background", "")
       }
     }
   },
