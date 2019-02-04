@@ -438,7 +438,6 @@ export let buscaMinas = {
           }
       }
     }else{
-      console.log("hola");
       for (
         let j = Math.max(x - 1, 0);
         j <= Math.min(x + 1, buscaMinas.filas - 1);
