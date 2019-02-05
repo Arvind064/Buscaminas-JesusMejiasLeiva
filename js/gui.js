@@ -163,7 +163,7 @@ let buscaMinasGUI = {
    * @param classs clase que se le añadirá al input
    * @param input elemento al cuál se le añadirá la clase
    */
-  claseSegunNivel(classs, input, delay = "", classsContigua = "") {
+  claseSegunNivel(classs, input, delay = "") {
 
     switch (buscaMinas.nivel) {
       case "facil":
@@ -229,9 +229,9 @@ let buscaMinasGUI = {
 
       buscaMinasGUI.actualizaNumBanderas();
 
-      let cont = 0;
+      let contDelay = 0;
       for (const item of buscaMinas.aperturaCasillas) {
-        cont++;
+        contDelay++;
         let fila = item.split("-")[0];
         let columna = item.split("-")[1];
 
@@ -253,11 +253,11 @@ let buscaMinasGUI = {
                  buscaMinasGUI.claseSegunNivel(
                    "blanco",
                    $element,
-                   "delay-" + cont + "s"
+                   "delay-" + contDelay + "s"
                  );
 
 
-                 if (cont === 1){
+                 if (contDelay === 1){
                    buscaMinasGUI.reproducirAudio("abrir.mp3");
                  }
 
@@ -431,16 +431,16 @@ let buscaMinasGUI = {
    */
   descubrirMinas() {
     buscaMinasGUI.eliminarBanderasGui();
-    let cont = 0;
+    let contDelay = 0;
 
     for (let mina of buscaMinas.apeturaMinas) {
-      cont++;
+      contDelay++;
       let $element = $("#" + mina);
 
       buscaMinasGUI.claseSegunNivel(
         "pink",
         $element,
-        "delay-" + cont + "s"
+        "delay-" + contDelay + "s"
       );
     }
   },
