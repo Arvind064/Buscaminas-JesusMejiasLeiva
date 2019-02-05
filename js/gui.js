@@ -419,7 +419,7 @@ let buscaMinasGUI = {
       case "experto":
             setTimeout(function(){
               buscaMinasGUI.swalVolverAJugar(message, "error");
-            }, 15000);
+            }, 12000);
         break;
       default:
         return;
