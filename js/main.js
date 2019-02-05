@@ -89,6 +89,9 @@ export let buscaMinas = {
      * juego.
      */
     despejar(x,y){
+
+      buscaMinas.seleccionaContiguas.clear();
+      
       if (x > buscaMinas.filas || y > buscaMinas.columnas){
         throw new Error("Coordenadas no válidas");
       }

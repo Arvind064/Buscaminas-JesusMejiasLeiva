@@ -192,20 +192,15 @@ let buscaMinasGUI = {
         buscaMinas.despejar(coordenada.fila, coordenada.columna);
         if (!buscaMinas.flagGanado && !buscaMinas.flagFinPartida){
           buscaMinasGUI.actualizarGui();
-        }
+          if (buscaMinas.seleccionaContiguas.size > 0){
+            for (let casilla of buscaMinas.seleccionaContiguas) {
 
-        if (buscaMinas.seleccionaContiguas.size > 0){
-          for (let casilla of buscaMinas.seleccionaContiguas) {
-
-
-              $("#" + casilla).animate({
-                "background-color" : "#B39DDB"
-              }).animate({
-                "background-color" : "#4A148C"
-              })
+                //$("#" + casilla).removeClass("violet");
+                $("#" + casilla).addClass("selected", 500,
+                          ()=>$("#" + casilla).removeClass("selected"));
 
 
-
+            }
           }
         }
 
@@ -482,6 +477,7 @@ let buscaMinasGUI = {
    * @param element elemento del DOM
    */
   limpiarClasesCss(element) {
+    element.css("background", "")
     if (element) {
       if (
         element.prop("class") !== ""
