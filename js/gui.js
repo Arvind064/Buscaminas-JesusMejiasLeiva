@@ -195,11 +195,8 @@ let buscaMinasGUI = {
           if (buscaMinas.seleccionaContiguas.size > 0){
             for (let casilla of buscaMinas.seleccionaContiguas) {
 
-                //$("#" + casilla).removeClass("violet");
                 $("#" + casilla).addClass("selected", 500,
                           ()=>$("#" + casilla).removeClass("selected"));
-
-
             }
           }
         }
