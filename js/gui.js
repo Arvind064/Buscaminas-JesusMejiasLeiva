@@ -95,7 +95,17 @@ let buscaMinasGUI = {
 
         buscaMinasGUI.claseSegunNivel("violet", $input);
 
+        $input.click(function(ev) {
+          buscaMinasGUI.picarGui($(this));
+        });
+
+        let longpress = 900; // tiempo para detectar la pulsación larga
+        let start; // hora de comienzo
+
           $input.mousedown(function(ev) {
+            //calculamos la hora exacta de cuando pulsamos el touchpad
+            start = new Date().getTime();
+
             switch (ev.buttons) {
               case 2:
                   buscaMinasGUI.marcarGui($(this));
@@ -109,11 +119,18 @@ let buscaMinasGUI = {
 
           });
 
+          // función para detectar la pulsación larga
+          (function() {
+              $input.mouseleave(function(event) {
+                start = 0; // cuando perdemos el foco del ratón asigaamos a 0
+              });
 
-
-        $input.click(function(ev) {
-          buscaMinasGUI.picarGui($(this));
-        });
+              $input.mouseup(function(event) {
+                if (new Date().getTime() >= ( start + longpress )){
+                    buscaMinasGUI.despejarGui($(this));
+                }
+              });
+          }());
 
 
         $fragment.append($input)
