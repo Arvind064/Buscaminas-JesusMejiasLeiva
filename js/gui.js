@@ -200,6 +200,7 @@ let buscaMinasGUI = {
         }
 
     } catch (e) {
+      buscaMinasGUI.actualizarGui();
       buscaMinasGUI.descubrirMinas();
       if (e.message === "¡¡¡ Felicidades has ganado !!!") {
         setTimeout(function(){
@@ -220,10 +221,6 @@ let buscaMinasGUI = {
    * Actualiza la GUI con los valores del tablero visible interno
    */
   actualizarGui() {
-    if (buscaMinas.flagFinPartida || buscaMinas.flagGanado) {
-      buscaMinasGUI.descubrirMinas();
-      return;
-    }
 
       buscaMinasGUI.actualizaNumBanderas();
 
@@ -293,6 +290,7 @@ let buscaMinasGUI = {
           }
 
       } catch (e) {
+        buscaMinasGUI.actualizarGui();
         buscaMinasGUI.descubrirMinas();
         if (e.message === "¡¡¡ Felicidades has ganado !!!") {
           buscaMinasGUI.comprobarRecord();
@@ -337,6 +335,7 @@ let buscaMinasGUI = {
         buscaMinasGUI.actualizaNumBanderas();
 
     } catch (e) {
+      buscaMinasGUI.actualizarGui();
       buscaMinasGUI.descubrirMinas();
       if (e.message === "¡¡¡ Felicidades has ganado !!!") {
         buscaMinasGUI.comprobarRecord();
@@ -429,17 +428,15 @@ let buscaMinasGUI = {
    */
   descubrirMinas() {
     buscaMinasGUI.eliminarBanderasGui();
-    let contDelay = 0;
+    let contDelay = 400;
 
     for (let mina of buscaMinas.apeturaMinas) {
-      contDelay++;
-      let $element = $("#" + mina);
+      contDelay += 80;
 
-      buscaMinasGUI.claseSegunNivel(
-        "pink",
-        $element,
-        "delay-" + contDelay + "s"
-      );
+      $("#" + mina).animate({
+        color: "#EC407A",
+        backgroundColor: "#EC407A"
+      },contDelay);
     }
   },
   eliminarBanderasGui(){

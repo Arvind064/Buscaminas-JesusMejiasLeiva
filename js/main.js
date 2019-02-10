@@ -499,11 +499,11 @@ export let buscaMinas = {
       buscaMinas.abrirCeros(i, j);
       buscaMinas.cargarPulsacion(i, j);
       buscaMinas.actualizaCambios();
-      // console.clear();
-      // console.log("Tablero Master \n");
-      // console.table(buscaMinas.tableroMaster);
-      // console.log("Tablero Visible \n");
-      // console.table(buscaMinas.tableroVisible);
+       console.clear();
+       console.log("Tablero Master \n");
+      console.table(buscaMinas.tableroMaster);
+       console.log("Tablero Visible \n");
+       console.table(buscaMinas.tableroVisible);
       // console.table(buscaMinas.tableroPulsaciones);
       buscaMinas.comprobarSiGana();
 
