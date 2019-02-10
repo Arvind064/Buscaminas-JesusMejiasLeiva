@@ -3,9 +3,6 @@
  * @author Jesús Mejías Leiva
  */
 
- /*
- * TODO: ARREGLAR COLOR DE LAS MINAS
- */
 import { buscaMinas } from "./main.js";
 
 let $container;
@@ -99,7 +96,7 @@ let buscaMinasGUI = {
           buscaMinasGUI.picarGui($(this));
         });
 
-        let longpress = 900; // tiempo para detectar la pulsación larga
+        let longpress = 1000; // tiempo para detectar la pulsación larga
         let start; // hora de comienzo
 
           $input.mousedown(function(ev) {
@@ -148,14 +145,15 @@ let buscaMinasGUI = {
   * @param animationOthers animación que se le añadirá a los input que no sean violet.
   * @param nivel nivel actual de la partida.
   */
-  animationInput(input,classs,animationViolet,animationOthers, nivel){
+  animationInput(input,classs, nivel, effect,delay){
 
     if (classs === "violet"){
       buscaMinasGUI.limpiarClasesCss(input)
-      input.addClass('animated ' + animationViolet + ' faster ' + nivel + ' ' + classs );
+      input.addClass('animated ' + 'zoomIn ' + 'faster ' + nivel + ' ' + classs );
     }else{
       buscaMinasGUI.limpiarClasesCss(input)
-      input.addClass('animated ' + animationOthers + ' faster ' + nivel + ' ' + classs);
+      input.addClass(nivel + ' ' + classs );
+      input.effect("bounce", delay);
     }
   },
   /**
@@ -163,11 +161,11 @@ let buscaMinasGUI = {
    * @param classs clase que se le añadirá al input
    * @param input elemento al cuál se le añadirá la clase
    */
-  claseSegunNivel(classs, input, delay = "") {
+  claseSegunNivel(classs, input, delay = 400, effect = "bounce") {
 
     switch (buscaMinas.nivel) {
       case "facil":
-          buscaMinasGUI.animationInput(input,classs,"zoomIn", "jackInTheBox " + delay, " inputFacil")
+          buscaMinasGUI.animationInput(input,classs, " inputFacil", effect, delay)
         break;
 
       case "intermedio":
@@ -195,8 +193,8 @@ let buscaMinasGUI = {
           if (buscaMinas.seleccionaContiguas.size > 0){
             for (let casilla of buscaMinas.seleccionaContiguas) {
 
-                $("#" + casilla).addClass("selected", 500,
-                          ()=>$("#" + casilla).removeClass("selected"));
+              $("#"  + casilla).effect("highlight", "slow");
+
             }
           }
         }
@@ -229,9 +227,9 @@ let buscaMinasGUI = {
 
       buscaMinasGUI.actualizaNumBanderas();
 
-      let contDelay = 0;
+      let contDelay = 400;
       for (const item of buscaMinas.aperturaCasillas) {
-        contDelay++;
+        contDelay += 40;
         let fila = item.split("-")[0];
         let columna = item.split("-")[1];
 
@@ -253,11 +251,11 @@ let buscaMinasGUI = {
                  buscaMinasGUI.claseSegunNivel(
                    "blanco",
                    $element,
-                   "delay-" + contDelay + "s"
+                   contDelay
                  );
 
 
-                 if (contDelay === 1){
+                 if (contDelay === 440){
                    buscaMinasGUI.reproducirAudio("abrir.mp3");
                  }
 
@@ -474,13 +472,11 @@ let buscaMinasGUI = {
    * @param element elemento del DOM
    */
   limpiarClasesCss(element) {
-    element.css("background", "")
     if (element) {
       if (
         element.prop("class") !== ""
       ) {
         element.prop("class", "");
-        element.css("background", "")
       }
     }
   },

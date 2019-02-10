@@ -98,104 +98,72 @@ export let buscaMinas = {
 
       if (buscaMinas.obtenerBanderasColindantes(x,y) === buscaMinas.tableroMaster[x][y]){
 
-        if (x > 0 && y > 0){
-          if (buscaMinas.tableroVisible[x - 1][ y - 1] !== "!" && buscaMinas.tableroPulsaciones[x - 1][y - 1] !== "p"){
+        if ((x > 0 && y > 0) && (buscaMinas.tableroVisible[x - 1][ y - 1] !== "!" && buscaMinas.tableroPulsaciones[x - 1][y - 1] !== "p")){
             buscaMinas.picar(x-1,y-1);
-          }
         }
 
-        if ( y > 0){
-          if (buscaMinas.tableroVisible[x][y - 1] !== "!" && buscaMinas.tableroPulsaciones[x][y-1] !== "p"){
+        if ( (y > 0) && (buscaMinas.tableroVisible[x][y - 1] !== "!" && buscaMinas.tableroPulsaciones[x][y-1] !== "p")){
             buscaMinas.picar(x,y-1);
-          }
         }
 
-        if (y > 0 && x < buscaMinas.filas - 1){
-          if (buscaMinas.tableroVisible[x + 1][y - 1] !== "!" && buscaMinas.tableroPulsaciones[x+1][y-1] !== "p"){
+        if ((y > 0 && x < buscaMinas.filas - 1) && (buscaMinas.tableroVisible[x + 1][y - 1] !== "!" && buscaMinas.tableroPulsaciones[x+1][y-1] !== "p") ){
             buscaMinas.picar(x+1,y-1);
-          }
         }
 
-        if (x > 0){
-          if (buscaMinas.tableroVisible[x - 1][y] !== "!" && buscaMinas.tableroPulsaciones[x-1][y] !== "p"){
+        if ((x > 0) && (buscaMinas.tableroVisible[x - 1][y] !== "!" && buscaMinas.tableroPulsaciones[x-1][y] !== "p")){
             buscaMinas.picar(x-1,y);
-          }
         }
 
-        if (x < buscaMinas.filas - 1 ){
-          if (buscaMinas.tableroVisible[x + 1][y] !== "!" && buscaMinas.tableroPulsaciones[x+1][y] !== "p"){
+        if ((x < buscaMinas.filas - 1) && (buscaMinas.tableroVisible[x + 1][y] !== "!" && buscaMinas.tableroPulsaciones[x+1][y] !== "p")){
             buscaMinas.picar(x+1,y);
-          }
         }
 
-        if (y < buscaMinas.columnas - 1){
-          if (buscaMinas.tableroVisible[x][y + 1] !== "!" && buscaMinas.tableroPulsaciones[x][y+1] !== "p"){
+        if ((y < buscaMinas.columnas - 1) && (buscaMinas.tableroVisible[x][y + 1] !== "!" && buscaMinas.tableroPulsaciones[x][y+1] !== "p")){
             buscaMinas.picar(x,y+1);
-          }
         }
 
-        if (x < buscaMinas.filas - 1  && y < buscaMinas.columnas - 1){
-          if (buscaMinas.tableroVisible[x + 1][y + 1] !== "!" && buscaMinas.tableroPulsaciones[x+1][y+1] !== "p"){
+        if ((x < buscaMinas.filas - 1  && y < buscaMinas.columnas - 1) && (buscaMinas.tableroVisible[x + 1][y + 1] !== "!" && buscaMinas.tableroPulsaciones[x+1][y+1] !== "p")){
             buscaMinas.picar(x+1,y+1);
-          }
         }
 
-        if (x > 0  && y < buscaMinas.columnas - 1){
-          if (buscaMinas.tableroVisible[x - 1][y + 1] !== "!" && buscaMinas.tableroPulsaciones[x-1][y+1] !== "p"){
+        if ((x > 0  && y < buscaMinas.columnas - 1) && (buscaMinas.tableroVisible[x - 1][y + 1] !== "!" && buscaMinas.tableroPulsaciones[x-1][y+1] !== "p")){
             buscaMinas.picar(x-1,y+1);
-          }
         }
 
       }else{
 
         buscaMinas.seleccionaContiguas.clear();
 
-        if (x > 0 && y > 0){
-          if (buscaMinas.tableroVisible[x - 1][ y - 1] !== "!" && buscaMinas.tableroPulsaciones[x - 1][y - 1] !== "p"){
+        if ((x > 0 && y > 0) && (buscaMinas.tableroVisible[x - 1][ y - 1] !== "!" && buscaMinas.tableroPulsaciones[x - 1][y - 1] !== "p")){
             buscaMinas.seleccionaContiguas.add((x-1) + "-" + (y-1));
-          }
         }
 
-        if ( y > 0){
-          if (buscaMinas.tableroVisible[x][y - 1] !== "!" && buscaMinas.tableroPulsaciones[x][y-1] !== "p"){
+        if ((y > 0) && (buscaMinas.tableroVisible[x][y - 1] !== "!" && buscaMinas.tableroPulsaciones[x][y-1] !== "p")){
             buscaMinas.seleccionaContiguas.add((x) + "-" + (y-1));
-          }
         }
 
-        if (y > 0 && x < buscaMinas.filas - 1){
-          if (buscaMinas.tableroVisible[x + 1][y - 1] !== "!" && buscaMinas.tableroPulsaciones[x+1][y-1] !== "p"){
+        if ((y > 0 && x < buscaMinas.filas - 1) && (buscaMinas.tableroVisible[x + 1][y - 1] !== "!" && buscaMinas.tableroPulsaciones[x+1][y-1] !== "p")){
             buscaMinas.seleccionaContiguas.add((x+1) + "-" + (y-1));
-          }
         }
 
-        if (x > 0){
-          if (buscaMinas.tableroVisible[x - 1][y] !== "!" && buscaMinas.tableroPulsaciones[x-1][y] !== "p"){
+        if ((x > 0) && (buscaMinas.tableroVisible[x - 1][y] !== "!" && buscaMinas.tableroPulsaciones[x-1][y] !== "p")){
             buscaMinas.seleccionaContiguas.add((x-1) + "-" + (y));
-          }
         }
 
-        if (x < buscaMinas.filas - 1 ){
-          if (buscaMinas.tableroVisible[x + 1][y] !== "!" && buscaMinas.tableroPulsaciones[x+1][y] !== "p"){
+        if ((x < buscaMinas.filas - 1) && (buscaMinas.tableroVisible[x + 1][y] !== "!" && buscaMinas.tableroPulsaciones[x+1][y] !== "p") ){
             buscaMinas.seleccionaContiguas.add((x+1) + "-" + (y));
-          }
         }
 
-        if (y < buscaMinas.columnas - 1){
-          if (buscaMinas.tableroVisible[x][y + 1] !== "!" && buscaMinas.tableroPulsaciones[x][y+1] !== "p"){
+        if ((y < buscaMinas.columnas - 1) && (buscaMinas.tableroVisible[x][y + 1] !== "!" && buscaMinas.tableroPulsaciones[x][y+1] !== "p")){
             buscaMinas.seleccionaContiguas.add((x) + "-" + (y+1));
-          }
         }
 
-        if (x < buscaMinas.filas - 1  && y < buscaMinas.columnas - 1){
-          if (buscaMinas.tableroVisible[x + 1][y + 1] !== "!" && buscaMinas.tableroPulsaciones[x+1][y+1] !== "p"){
+        if ((x < buscaMinas.filas - 1  && y < buscaMinas.columnas - 1) && (buscaMinas.tableroVisible[x + 1][y + 1] !== "!" && buscaMinas.tableroPulsaciones[x+1][y+1] !== "p")){
             buscaMinas.seleccionaContiguas.add((x+1) + "-" + (y+1));
-          }
         }
 
-        if (x > 0  && y < buscaMinas.columnas - 1){
-          if (buscaMinas.tableroVisible[x - 1][y + 1] !== "!" && buscaMinas.tableroPulsaciones[x-1][y+1] !== "p"){
+        if ((x > 0  && y < buscaMinas.columnas - 1) && (buscaMinas.tableroVisible[x - 1][y + 1] !== "!" && buscaMinas.tableroPulsaciones[x-1][y+1] !== "p")){
             buscaMinas.seleccionaContiguas.add((x-1) + "-" + (y+1));
-          }
         }
       }
     },
