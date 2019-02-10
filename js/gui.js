@@ -153,7 +153,7 @@ let buscaMinasGUI = {
     }else{
       buscaMinasGUI.limpiarClasesCss(input)
       input.addClass(nivel + ' ' + classs );
-      input.effect("bounce", delay);
+      input.effect(effect, delay);
     }
   },
   /**
@@ -169,11 +169,11 @@ let buscaMinasGUI = {
         break;
 
       case "intermedio":
-              buscaMinasGUI.animationInput(input,classs,"zoomIn", "jackInTheBox " + delay , " inputIntermedio")
+          buscaMinasGUI.animationInput(input,classs, " inputIntermedio", effect, delay)
         break;
 
       case "experto":
-            buscaMinasGUI.animationInput(input,classs,"zoomIn", "jackInTheBox " + delay , " inputExperto")
+            buscaMinasGUI.animationInput(input,classs, " inputExperto", effect, delay)
         break;
 
       default:
@@ -193,7 +193,7 @@ let buscaMinasGUI = {
           if (buscaMinas.seleccionaContiguas.size > 0){
             for (let casilla of buscaMinas.seleccionaContiguas) {
 
-              $("#"  + casilla).effect("highlight", "slow");
+              $("#"  + casilla).effect("highlight",{ color : "#B39DDB" } , "slow");
 
             }
           }
