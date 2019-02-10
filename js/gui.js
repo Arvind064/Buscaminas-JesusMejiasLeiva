@@ -229,7 +229,7 @@ let buscaMinasGUI = {
 
       let contDelay = 400;
       for (const item of buscaMinas.aperturaCasillas) {
-        contDelay += 40;
+        contDelay += 80;
         let fila = item.split("-")[0];
         let columna = item.split("-")[1];
 
@@ -255,7 +255,7 @@ let buscaMinasGUI = {
                  );
 
 
-                 if (contDelay === 440){
+                 if (contDelay === 480){
                    buscaMinasGUI.reproducirAudio("abrir.mp3");
                  }
 
