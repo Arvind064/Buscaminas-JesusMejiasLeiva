@@ -187,6 +187,7 @@ let buscaMinasGUI = {
   despejarGui(element) {
     let coordenada = buscaMinasGUI.extraerCoordenada(element);
     try {
+
         buscaMinas.despejar(coordenada.fila, coordenada.columna);
         if (!buscaMinas.flagGanado && !buscaMinas.flagFinPartida){
           buscaMinasGUI.actualizarGui();
@@ -200,7 +201,6 @@ let buscaMinasGUI = {
         }
 
     } catch (e) {
-      buscaMinasGUI.actualizarGui();
       buscaMinasGUI.descubrirMinas();
       if (e.message === "¡¡¡ Felicidades has ganado !!!") {
         setTimeout(function(){
@@ -318,20 +318,22 @@ let buscaMinasGUI = {
 
     try {
         buscaMinas.marcar(coordenada.fila, coordenada.columna);
-        if (buscaMinas.tableroVisible[coordenada.fila][coordenada.columna] === "!" ){
-          buscaMinasGUI.reproducirAudio("flag.mp3");
-          buscaMinasGUI.claseSegunNivel(
-            "amarillo",
-            element
-          )
-        }else if (buscaMinas.tableroPulsaciones[coordenada.fila][coordenada.columna] !== "p"){
-              buscaMinasGUI.claseSegunNivel(
-                "violet",
-                element
-              )
+        if (!buscaMinas.flagGanado && !buscaMinas.flagFinPartida ){
+          if (buscaMinas.tableroVisible[coordenada.fila][coordenada.columna] === "!" ){
+            buscaMinasGUI.reproducirAudio("flag.mp3");
+            buscaMinasGUI.claseSegunNivel(
+              "amarillo",
+              element
+            )
+          }else if (buscaMinas.tableroPulsaciones[coordenada.fila][coordenada.columna] !== "p"){
+                buscaMinasGUI.claseSegunNivel(
+                  "violet",
+                  element
+                )
+          }
         }
-        // actualizo el numero de banderas
 
+        // actualizo el numero de banderas
         buscaMinasGUI.actualizaNumBanderas();
 
     } catch (e) {

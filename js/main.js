@@ -48,6 +48,9 @@ export let buscaMinas = {
    * @param y coordenada para la columna
    */
   marcar(x, y) {
+    if (buscaMinas.flagGanado || buscaMinas.flagFinPartida || buscaMinas.tableroPulsaciones[x][y] === "p") {
+      return;
+    }
       if (
         buscaMinas.tableroPulsaciones[x][y] !== "p" &&
         buscaMinas.tableroVisible[x][y] !== "!" && !buscaMinas.flagFinPartida
@@ -89,6 +92,10 @@ export let buscaMinas = {
      * juego.
      */
     despejar(x,y){
+
+      if (buscaMinas.flagGanado || buscaMinas.flagFinPartida || buscaMinas.tableroPulsaciones[x][y] === "p") {
+        return;
+      }
 
       buscaMinas.seleccionaContiguas.clear();
 
