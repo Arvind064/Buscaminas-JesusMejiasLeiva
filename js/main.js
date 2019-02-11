@@ -93,7 +93,6 @@ export let buscaMinas = {
      */
     despejar(x,y){
 
-
       if (buscaMinas.flagGanado || buscaMinas.flagFinPartida) {
         return;
       }
