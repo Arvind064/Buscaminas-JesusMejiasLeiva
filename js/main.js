@@ -93,7 +93,8 @@ export let buscaMinas = {
      */
     despejar(x,y){
 
-      if (buscaMinas.flagGanado || buscaMinas.flagFinPartida || buscaMinas.tableroPulsaciones[x][y] === "p") {
+
+      if (buscaMinas.flagGanado || buscaMinas.flagFinPartida) {
         return;
       }
 
