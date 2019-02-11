@@ -291,7 +291,6 @@ let buscaMinasGUI = {
           }
 
       } catch (e) {
-        buscaMinasGUI.actualizarGui();
         buscaMinasGUI.descubrirMinas();
         if (e.message === "¡¡¡ Felicidades has ganado !!!") {
           buscaMinasGUI.comprobarRecord();
@@ -338,7 +337,6 @@ let buscaMinasGUI = {
         buscaMinasGUI.actualizaNumBanderas();
 
     } catch (e) {
-      buscaMinasGUI.actualizarGui();
       buscaMinasGUI.descubrirMinas();
       if (e.message === "¡¡¡ Felicidades has ganado !!!") {
         buscaMinasGUI.comprobarRecord();
@@ -432,6 +430,11 @@ let buscaMinasGUI = {
   descubrirMinas() {
     buscaMinasGUI.eliminarBanderasGui();
     let contDelay = 400;
+    let $inputs = $("input");
+
+    $inputs.removeClass("violet", function(){
+      $(this).addClass("blanco");
+    });
 
     for (let mina of buscaMinas.apeturaMinas) {
 
@@ -446,6 +449,7 @@ let buscaMinasGUI = {
           backgroundColor: "#EC407A"
         },contDelay);
       }
+
 
 
       contDelay += 80;
