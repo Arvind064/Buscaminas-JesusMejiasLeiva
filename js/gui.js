@@ -226,7 +226,6 @@ let buscaMinasGUI = {
 
       let contDelay = 400;
       for (const item of buscaMinas.aperturaCasillas) {
-        contDelay += 80;
         let fila = item.split("-")[0];
         let columna = item.split("-")[1];
 
@@ -252,11 +251,13 @@ let buscaMinasGUI = {
                  );
 
 
-                 if (contDelay === 480){
+                 if (contDelay === 400){
                    buscaMinasGUI.reproducirAudio("abrir.mp3");
                  }
 
               }
+
+              contDelay += 80;
       }
 
       buscaMinas.aperturaCasillas.clear(); // vacío la collection con las coordenadas
@@ -433,12 +434,21 @@ let buscaMinasGUI = {
     let contDelay = 400;
 
     for (let mina of buscaMinas.apeturaMinas) {
-      contDelay += 80;
 
-      $("#" + mina).animate({
-        color: "#EC407A",
-        backgroundColor: "#EC407A"
-      },contDelay);
+      if (buscaMinas.flagGanado){
+        $("#" + mina).animate({
+          color: "#43A047",
+          backgroundColor: "#43A047"
+        },contDelay);
+      }else{
+        $("#" + mina).animate({
+          color: "#EC407A",
+          backgroundColor: "#EC407A"
+        },contDelay);
+      }
+
+
+      contDelay += 80;
     }
   },
   eliminarBanderasGui(){
