@@ -432,9 +432,8 @@ let buscaMinasGUI = {
     let contDelay = 400;
     let $inputs = $("input");
 
-    $inputs.removeClass("violet", function(){
-      $(this).addClass("blanco");
-    });
+    $inputs.switchClass("violet", "blanco");
+    $inputs.switchClass("amarillo", "blanco");
 
     for (let mina of buscaMinas.apeturaMinas) {
 
@@ -461,8 +460,7 @@ let buscaMinasGUI = {
       let $input = $("#"+ coordenada);
 
       if ($input.hasClass("amarillo")){
-        $input.removeClass("amarillo");
-        $input.addClass("violet");
+        $input.switchClass("violet", "amarillo");
       }
 
     }
