@@ -161,7 +161,7 @@ let buscaMinasGUI = {
    * @param classs clase que se le añadirá al input
    * @param input elemento al cuál se le añadirá la clase
    */
-  claseSegunNivel(classs, input, delay = 400, effect = "bounce") {
+  claseSegunNivel(classs, input, delay = 400, effect = "fade") {
 
     switch (buscaMinas.nivel) {
       case "facil":
