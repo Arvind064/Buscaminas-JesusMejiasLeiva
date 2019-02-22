@@ -9,6 +9,8 @@ Abre el juego [aquí](https://iesgrancapitan-dwec.github.io/Buscaminas-JesusMeji
 
 ------------
 
+Solo es necesario hacer un ```buscaminas.mostrar()``` en la consola, **una vez se haya elegido el nivel del juego**.
+
 ------------
 
  ### :dizzy: Efectos Jquery para las funcionalidades básicas :dizzy:
