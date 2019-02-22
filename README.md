@@ -5,6 +5,12 @@ Abre el juego [aquí](https://iesgrancapitan-dwec.github.io/Buscaminas-JesusMeji
 
 ------------
 
+ ### :question: ¿Cómo puedo ver el tablero para hacer las pruebas? :question:
+
+------------
+
+------------
+
  ### :dizzy: Efectos Jquery para las funcionalidades básicas :dizzy:
 
 ------------
