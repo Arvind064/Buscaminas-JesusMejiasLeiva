@@ -1,7 +1,8 @@
 
 :bomb: Buscaminas :bomb:
 ----
-Abre el juego <a href="https://iesgrancapitan-dwec.github.io/Buscaminas-JesusMejiasLeiva" style="text-decoration:none;color:#6A1B9A">Aquí</a>
+Abre el juego <a href="https://iesgrancapitan-dwec.github.io/Buscaminas-JesusMejiasLeiva"
+target="_blank" style="text-decoration:none;color:#6A1B9A">Aquí</a>
 
 
  ### :dizzy: Efectos Jquery para las funcionalidades básicas :dizzy:
