@@ -1,43 +1,45 @@
 
 :bomb: Buscaminas :bomb:
 ----
-Abre el juego <a href="https://iesgrancapitan-dwec.github.io/Buscaminas-JesusMejiasLeiva"
-target="_blank" style="text-decoration:none!important;color:#6A1B9A">Aquí</a>
+Abre el juego [aquí](https://iesgrancapitan-dwec.github.io/Buscaminas-JesusMejiasLeiva)
+
 
 
  ### :dizzy: Efectos Jquery para las funcionalidades básicas :dizzy:
 
 #### Click (Abrir casilla)
 
-:rocket: <a href="https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L96" style="text-decoration:none!important;color:#6A1B9A">Invocación</a>
+:rocket: [Invocación](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L96)
 
-:memo: <a href="https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L282" style="text-decoration:none!important;color:#6A1B9A">Función</a>
+
+:memo: [Función](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L282)
+
 
 
 #### Click derecho (Colocar o quitar bandera)
 
-:rocket: <a href="https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L108" style="text-decoration:none!important;color:#6A1B9A">Invocación</a>
+:rocket: [Invocación](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L108)
 
 
-:memo: <a href="https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L316" style="text-decoration:none;color:#6A1B9A">Función</a>
+:memo: [Función](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L316)
 
 #### Click con ambos botones o pulsación larga (despejar)
 
-:rocket: <a href="https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L111" style="text-decoration:none!important;color:#6A1B9A">Invocación.</a> Pulsación dos botones
+:rocket: [Invocación. Pulsación dos botones](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L111)
 
-:rocket: <a href="https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L127" style="text-decoration:none!important;color:#6A1B9A">Invocación.</a> Pulsación larga
+:rocket: [Invocación. Pulsación larga](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L127)
 
-:memo: <a href="https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L187" style="text-decoration:none!important;color:#6A1B9A">Función</a>
+:memo: <a href="https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L187">Función</a>
 
 #### Ganar
 
 :rocket: Se invoca en la captura de la exception correspondiente.
 
-:memo: <a href="https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L355" style="text-decoration:none!important;color:#6A1B9A">Función</a>
+:memo: <a href="https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L355">Función</a>
 
 
 #### Perder
 
 :rocket: Se invoca en la captura de la exception correspondiente.
 
-:memo: <a href="https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L355" style="text-decoration:none!important;color:#6A1B9A">Función</a>
+:memo: [Función ](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L355)
