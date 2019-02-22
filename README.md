@@ -39,7 +39,7 @@ Abre el juego [aquí](https://iesgrancapitan-dwec.github.io/Buscaminas-JesusMeji
 :memo: [Función](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L355)
 
 
-####Perder
+#### Perder
 
 :rocket: Se invoca en la captura de la exception correspondiente.
 
