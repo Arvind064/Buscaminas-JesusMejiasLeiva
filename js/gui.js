@@ -432,12 +432,11 @@ let buscaMinasGUI = {
     let contDelay = 400;
     let $inputs = $("input");
 
-    $inputs.switchClass("violet", "blanco");
-    $inputs.switchClass("amarillo", "blanco");
-
     for (let mina of buscaMinas.apeturaMinas) {
 
       if (buscaMinas.flagGanado){
+        $inputs.switchClass("violet", "blanco");
+        $inputs.switchClass("amarillo", "blanco");
         $("#" + mina).animate({
           color: "#43A047",
           backgroundColor: "#43A047"
