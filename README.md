@@ -52,7 +52,7 @@ Abre el juego [aquí](https://iesgrancapitan-dwec.github.io/Buscaminas-JesusMeji
 
 :zap: [Muestro ventana emergente con Swal](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L299)
 
-
+------------
 #### Perder
 
 :rocket: Se invoca en la captura de la exception correspondiente.
