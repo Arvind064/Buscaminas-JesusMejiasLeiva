@@ -5,7 +5,7 @@ Abre el juego [aquí](https://iesgrancapitan-dwec.github.io/Buscaminas-JesusMeji
 
 
 
- ### :dizzy: Efectos Jquery :dizzy:
+ ### :dizzy: Efectos Jquery para las funcionalidades básicas :dizzy:
 
 #### Click (Abrir casilla)
 
