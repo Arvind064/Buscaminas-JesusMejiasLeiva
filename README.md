@@ -31,6 +31,7 @@ Abre el juego [aquí](https://iesgrancapitan-dwec.github.io/Buscaminas-JesusMeji
 
 :memo: <a href="https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L187">Función</a>
 
+
 #### Ganar
 
 :rocket: Se invoca en la captura de la exception correspondiente.
