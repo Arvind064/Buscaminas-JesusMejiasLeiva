@@ -3,10 +3,11 @@
 ----
 Abre el juego [aquí](https://iesgrancapitan-dwec.github.io/Buscaminas-JesusMejiasLeiva)
 
-
+------------
 
  ### :dizzy: Efectos Jquery para las funcionalidades básicas :dizzy:
 
+------------
 #### Click (Abrir casilla)
 
 :rocket: [Invocación](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L96)
@@ -15,13 +16,15 @@ Abre el juego [aquí](https://iesgrancapitan-dwec.github.io/Buscaminas-JesusMeji
 :memo: [Función](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L282)
 
 
-
+------------
 #### Click derecho (Colocar o quitar bandera)
 
 :rocket: [Invocación](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L108)
 
 
 :memo: [Función](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L316)
+
+------------
 
 #### Click con ambos botones o pulsación larga (despejar)
 
@@ -31,6 +34,7 @@ Abre el juego [aquí](https://iesgrancapitan-dwec.github.io/Buscaminas-JesusMeji
 
 :memo: [Función](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L187)
 
+------------
 
 #### Ganar
 
