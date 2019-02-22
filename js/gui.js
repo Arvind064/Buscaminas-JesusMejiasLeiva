@@ -96,7 +96,7 @@ let buscaMinasGUI = {
           buscaMinasGUI.picarGui($(this));
         });
 
-        let longpress = 1000; // tiempo para detectar la pulsación larga
+        let longpress = 1200; // tiempo para detectar la pulsación larga
         let start; // hora de comienzo
 
           $input.mousedown(function(ev) {
