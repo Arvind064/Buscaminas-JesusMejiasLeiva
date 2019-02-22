@@ -9,7 +9,7 @@ Abre el juego [aquí](https://iesgrancapitan-dwec.github.io/Buscaminas-JesusMeji
 
 ------------
 
-Solo es necesario hacer un ```buscaminas.mostrar()``` en la consola, **una vez se haya elegido el nivel del juego**.
+Solo es necesario hacer un ```buscaminas.mostrar()``` en la consola, **una vez se haya elegido el nivel del juego**. Las casillas que muestren una ```x``` indican que en ella se encuentra una mina.
 
 ------------
 
