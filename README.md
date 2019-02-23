@@ -15,7 +15,7 @@ Solo es necesario hacer un ```buscaminas.mostrar()``` en la consola, **una vez s
 
 ------------
 
- ### :dizzy: Efectos Jquery para las funcionalidades básicas :dizzy:
+ ### :dizzy: Efectos jquery para las funcionalidades básicas :dizzy:
 
 ------------
 #### Click (Abrir casilla)
@@ -26,7 +26,7 @@ Solo es necesario hacer un ```buscaminas.mostrar()``` en la consola, **una vez s
 
 :memo: [Función](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L282)
 
-:zap: [Aquí se añade el efecto Jquery](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L247)
+:zap: [Aquí se añade el efecto jquery](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L247)
 
 
 
@@ -39,7 +39,7 @@ Solo es necesario hacer un ```buscaminas.mostrar()``` en la consola, **una vez s
 
 :memo: [Función](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L316)
 
-:zap: [Aquí se añade el efecto Jquery](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L324)
+:zap: [Aquí se añade el efecto jquery](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L324)
 
 
 
@@ -55,7 +55,7 @@ Solo es necesario hacer un ```buscaminas.mostrar()``` en la consola, **una vez s
 
 :memo: [Función](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L187)
 
-:zap: [Aquí se añade el efecto Jquery.](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L197)
+:zap: [Aquí se añade el efecto jquery.](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L197)
 
 
 ------------
