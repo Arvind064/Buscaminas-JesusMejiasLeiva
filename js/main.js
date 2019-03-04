@@ -82,6 +82,9 @@ let buscaminasFuncionalidad = {
       }
       buscaminasFuncionalidad.comprobarGanadorBanderas();
   },
+  /*
+  * Guarda banderas en collection set para después eliminarlas deL tablero.
+  */
   eliminarBanderas(){
     for (let i = 0; i < buscaminasFuncionalidad.filas; i++) {
       for (let j = 0; j < buscaminasFuncionalidad.columnas; j++) {
@@ -489,7 +492,9 @@ let buscaminasFuncionalidad = {
         }
     }
   },
-
+  /*
+  * Comprueba que el juego no haya finalizado
+  */
   juegoNoFinalizado(){
     return !buscaminasFuncionalidad.flagGanado && !buscaminasFuncionalidad.flagPerdido
   },
@@ -566,10 +571,17 @@ let buscaminasFuncionalidad = {
 
 };
 
+
+/*
+* Closure objeto buscaminas
+*/
 buscaMinas = (function () {
     return buscaminasFuncionalidad;
 })();
 
+/*
+* Constantes para messages de execption
+*/
 messagesBuscaminas= (function () {
     return {
       "msgGanarPartida": msgGanarPartida,

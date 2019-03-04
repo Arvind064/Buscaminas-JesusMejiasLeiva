@@ -198,16 +198,7 @@ let buscaMinasGUI = {
         }
 
     } catch (e) {
-      // refactorizar
-      buscaMinasGUI.descubrirMinas();
-      if (e.message === messagesBuscaminas.msgGanarPartida) {
-        setTimeout(function(){
-          buscaMinasGUI.swalVolverAJugar(e.message, "success");
-        }, 4000);
-      } else {
-        buscaMinasGUI.reproducirAudio("explosion.mp3");
-        buscaMinasGUI.animacionAbrirMinasNivel(e.message);
-      }
+      buscaMinasGUI.controlException(e);
     }
   },
   actualizaNumBanderas(){
@@ -289,22 +280,21 @@ let buscaMinasGUI = {
           }
 
       } catch (e) {
-        buscaMinasGUI.descubrirMinas();
-        if (e.message === messagesBuscaminas.msgGanarPartida) {
-          buscaMinasGUI.comprobarRecord();
-          buscaMinasGUI.claseSegunNivel("blanco", element);
-          setTimeout(function(){
-            buscaMinasGUI.swalVolverAJugar(e.message, "success");
-          }, 4000);
-        } else {
-          buscaMinasGUI.reproducirAudio("explosion.mp3");
-
-          buscaMinasGUI.animacionAbrirMinasNivel(e.message);
-
-
-        }
+        buscaMinasGUI.controlException(e);
       }
 
+  },
+  controlException(e){
+    buscaMinasGUI.descubrirMinas();
+    if (e.message === messagesBuscaminas.msgGanarPartida) {
+      buscaMinasGUI.comprobarRecord();
+      setTimeout(function(){
+        buscaMinasGUI.swalVolverAJugar(e.message, "success");
+      }, 4000);
+    } else {
+      buscaMinasGUI.reproducirAudio("explosion.mp3");
+      buscaMinasGUI.animacionAbrirMinasNivel(e.message);
+    }
   },
   /**
    * Realiza la accion de picar y actualiza la GUI
@@ -313,37 +303,25 @@ let buscaMinasGUI = {
    */
   marcarGui(element) {
     let coordenada = buscaMinasGUI.extraerCoordenada(element);
-
-    try {
         buscaMinas.marcar(coordenada.fila, coordenada.columna);
-        if (buscaMinas.juegoNoFinalizado() ){
-          if (buscaMinas.tableroVisible[coordenada.fila][coordenada.columna] === "!" ){
-            buscaMinasGUI.reproducirAudio("flag.mp3");
-            buscaMinasGUI.claseSegunNivel(
-              "amarillo",
-              element
-            )
-          }else if (buscaMinas.tableroPulsaciones[coordenada.fila][coordenada.columna] !== "p"){
-                buscaMinasGUI.claseSegunNivel(
-                  "violet",
-                  element
-                )
-          }
+        if (!buscaMinas.juegoNoFinalizado()){
+          return;
+        }
+        if (buscaMinas.tableroVisible[coordenada.fila][coordenada.columna] === "!" ){
+          buscaMinasGUI.reproducirAudio("flag.mp3");
+          buscaMinasGUI.claseSegunNivel(
+            "amarillo",
+            element
+          )
+        }else if (buscaMinas.tableroPulsaciones[coordenada.fila][coordenada.columna] !== "p"){
+              buscaMinasGUI.claseSegunNivel(
+                "violet",
+                element
+              )
         }
 
         // actualizo el numero de banderas
         buscaMinasGUI.actualizaNumBanderas();
-
-    } catch (e) {
-      buscaMinasGUI.descubrirMinas();
-      if (e.message === messagesBuscaminas.msgGanarPartida) {
-        buscaMinasGUI.comprobarRecord();
-        buscaMinasGUI.swalVolverAJugar(e.message, "success");
-      } else {
-        buscaMinasGUI.reproducirAudio("explosion.mp3");
-        buscaMinasGUI.animacionAbrirMinasNivel(e.message);
-      }
-    }
   },
   /**
    * Carga la librería sweetalert para preguntar si desea jugar de nuevo
