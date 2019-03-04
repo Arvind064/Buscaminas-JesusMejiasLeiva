@@ -3,7 +3,8 @@
  * @author Jesús Mejías Leiva
  */
 
-import { buscaMinas } from "./main.js";
+{
+//import { buscaMinas } from "./main.js";
 
 let $container;
 let $containerTablero;
@@ -11,9 +12,6 @@ let $timer;
 let $time;
 
 let init = function() {
-
-
-
 
   $("#elegirNivel").change(buscaMinasGUI.initJuego);
   $("#instrucciones").click(buscaMinasGUI.abrirInstrucciones);
@@ -44,21 +42,20 @@ let buscaMinasGUI = {
     buscaMinasGUI.volverAjugar();
     buscaMinasGUI.cssAlEmpezar();
     buscaMinasGUI.disableContextMenu();
-    buscaMinasGUI.mostrarTableros();
-
+    //buscaMinasGUI.mostrarTableros();
   },
-  /*
-  * Muestra el tablero con las minas
-  */
-  mostrarTableros(){
-    let buscaminas = function(){
-      return {
-        mostrar: () => buscaMinas.mostrar()
-      }
-    }();
-
-   window.buscaminas = buscaminas;
- },
+ //  /*
+ //  * Muestra el tablero con las minas
+ //  */
+ //  mostrarTableros(){
+ //    let buscaminas = function(){
+ //      return {
+ //        mostrar: () => buscaMinas.mostrar()
+ //      }
+ //    }();
+ //
+ //   window.buscaminas = buscaminas;
+ // },
   abrirInstrucciones() {
     window.open("./instrucciones.html", "", "");
   },
@@ -189,7 +186,7 @@ let buscaMinasGUI = {
     try {
 
         buscaMinas.despejar(coordenada.fila, coordenada.columna);
-        if (!buscaMinas.flagGanado && !buscaMinas.flagFinPartida){
+        if (buscaMinas.juegoNoFinalizado()){
           buscaMinasGUI.actualizarGui();
           if (buscaMinas.seleccionaContiguas.size > 0){
             for (let casilla of buscaMinas.seleccionaContiguas) {
@@ -201,8 +198,9 @@ let buscaMinasGUI = {
         }
 
     } catch (e) {
+      // refactorizar
       buscaMinasGUI.descubrirMinas();
-      if (e.message === "¡¡¡ Felicidades has ganado !!!") {
+      if (e.message === messagesBuscaminas.msgGanarPartida) {
         setTimeout(function(){
           buscaMinasGUI.swalVolverAJugar(e.message, "success");
         }, 4000);
@@ -286,13 +284,13 @@ let buscaMinasGUI = {
 
       try {
           buscaMinas.picar(coordenada.fila, coordenada.columna);
-          if (!buscaMinas.flagGanado && !buscaMinas.flagFinPartida ){
+          if (buscaMinas.juegoNoFinalizado()){
               buscaMinasGUI.actualizarGui();
           }
 
       } catch (e) {
         buscaMinasGUI.descubrirMinas();
-        if (e.message === "¡¡¡ Felicidades has ganado !!!") {
+        if (e.message === messagesBuscaminas.msgGanarPartida) {
           buscaMinasGUI.comprobarRecord();
           buscaMinasGUI.claseSegunNivel("blanco", element);
           setTimeout(function(){
@@ -318,7 +316,7 @@ let buscaMinasGUI = {
 
     try {
         buscaMinas.marcar(coordenada.fila, coordenada.columna);
-        if (!buscaMinas.flagGanado && !buscaMinas.flagFinPartida ){
+        if (buscaMinas.juegoNoFinalizado() ){
           if (buscaMinas.tableroVisible[coordenada.fila][coordenada.columna] === "!" ){
             buscaMinasGUI.reproducirAudio("flag.mp3");
             buscaMinasGUI.claseSegunNivel(
@@ -338,7 +336,7 @@ let buscaMinasGUI = {
 
     } catch (e) {
       buscaMinasGUI.descubrirMinas();
-      if (e.message === "¡¡¡ Felicidades has ganado !!!") {
+      if (e.message === messagesBuscaminas.msgGanarPartida) {
         buscaMinasGUI.comprobarRecord();
         buscaMinasGUI.swalVolverAJugar(e.message, "success");
       } else {
@@ -561,7 +559,7 @@ let buscaMinasGUI = {
     let seconds = 0;
 
     let interv = setInterval(() => {
-      if (!buscaMinas.flagFinPartida && !buscaMinas.flagGanado) {
+      if (buscaMinas.juegoNoFinalizado()) {
         seconds++;
         $("#time").text(seconds);
       } else {
@@ -593,3 +591,4 @@ let buscaMinasGUI = {
 };
 
 $(init);
+}
