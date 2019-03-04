@@ -531,14 +531,11 @@ let buscaminasFuncionalidad = {
       //  console.table(buscaminasFuncionalidad.tableroVisible);
       // console.table(buscaminasFuncionalidad.tableroPulsaciones);
       buscaminasFuncionalidad.comprobarSiGana();
-
-
     },
 
   /**
    * Comprueba si ganas las partida de manera normal
    */
-
   comprobarSiGana() {
 
       if (
@@ -575,6 +572,9 @@ let buscaminasFuncionalidad = {
 /*
 * Closure objeto buscaminas
 */
+
+// ¡¡ NO VEO SENTIDO A UN CLOSURE LOURDES, PUDIENDO USAR EXPORT E IMPORT !! :(
+
 buscaMinas = (function () {
     return buscaminasFuncionalidad;
 })();

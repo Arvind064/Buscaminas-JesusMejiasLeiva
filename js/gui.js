@@ -184,23 +184,23 @@ let buscaMinasGUI = {
   despejarGui(element) {
     let coordenada = buscaMinasGUI.extraerCoordenada(element);
     try {
-
         buscaMinas.despejar(coordenada.fila, coordenada.columna);
-        if (buscaMinas.juegoNoFinalizado()){
+        if (!buscaMinas.juegoNoFinalizado()){
+          return;
+        }
           buscaMinasGUI.actualizarGui();
           if (buscaMinas.seleccionaContiguas.size > 0){
             for (let casilla of buscaMinas.seleccionaContiguas) {
-
               $("#"  + casilla).effect("highlight",{ color : "#B39DDB" } , "slow");
-
             }
           }
-        }
-
     } catch (e) {
       buscaMinasGUI.controlException(e);
     }
   },
+  /*
+  * Actualiza el número de banderas en el contador
+  */
   actualizaNumBanderas(){
       if ($("#pNumBanderas")){
          $("#pNumBanderas").text(`${buscaMinas.numBanderas}`)
@@ -220,8 +220,6 @@ let buscaMinasGUI = {
 
         let $element = $("#" + fila +"-"+ columna)
 
-          //buscaMinasGUI.limpiarClasesCss($element);
-
               if (
                 buscaMinas.tableroVisible[fila][columna] !== "!" &&
                 buscaMinas.tableroVisible[fila][columna] !== "#"
@@ -229,7 +227,6 @@ let buscaMinasGUI = {
                 if (buscaMinas.tableroVisible[fila][columna] === 0) {
                   $element.val("");
                 }else{
-                  // cada número de un color, array y un switch
                    $element.val(buscaMinas.tableroVisible[fila][columna]);
                  };
 
@@ -239,19 +236,14 @@ let buscaMinasGUI = {
                    contDelay
                  );
 
-
                  if (contDelay === 400){
                    buscaMinasGUI.reproducirAudio("abrir.mp3");
                  }
-
               }
-
               contDelay += 80;
       }
 
       buscaMinas.aperturaCasillas.clear(); // vacío la collection con las coordenadas
-
-
    },
 
    /*
@@ -272,18 +264,20 @@ let buscaMinasGUI = {
 
     let coordenada = buscaMinasGUI.extraerCoordenada(element);
 
-
       try {
           buscaMinas.picar(coordenada.fila, coordenada.columna);
           if (buscaMinas.juegoNoFinalizado()){
               buscaMinasGUI.actualizarGui();
           }
-
       } catch (e) {
         buscaMinasGUI.controlException(e);
       }
 
   },
+  /*
+  * Control de manejo de mensajes al ganar y perder.
+  * @param e exception
+  */
   controlException(e){
     buscaMinasGUI.descubrirMinas();
     if (e.message === messagesBuscaminas.msgGanarPartida) {
@@ -319,7 +313,6 @@ let buscaMinasGUI = {
                 element
               )
         }
-
         // actualizo el numero de banderas
         buscaMinasGUI.actualizaNumBanderas();
   },
