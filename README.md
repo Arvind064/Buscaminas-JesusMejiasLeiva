@@ -9,9 +9,21 @@ Abre el juego [aquí](https://iesgrancapitan-dwec.github.io/Buscaminas-JesusMeji
 
 ------------
 
-Solo es necesario hacer un ```buscaminas.mostrar()``` en la consola, **una vez se haya elegido el nivel del juego**. Las casillas que muestren una ```x``` indican que en ella se encuentra una mina.
+Solo es necesario hacer un ```buscaMinas.mostrar()``` en la consola, **una vez se haya elegido el nivel del juego**. Las casillas que muestren una ```x``` indican que en ella se encuentra una mina.
 
-![Alt Text](images/mostrar.gif)
+![Alt Text](images/mostrarClosure.gif)
+
+------------
+
+------------
+
+ ### :exclamation: ¿Muy pesado a la hora de hacer los testeos con tantas minas? :exclamation:
+
+------------
+
+Para solucionar esta tediosa tarea, se ha añadido un nivel llamado testeo el cual nos dibuja una cuadrícula de 3x3 y 4 minas, lo cuál es mucho más eficiente a la hora de testear.
+
+![Alt Text](images/nivelTesteo.gif)
 
 ------------
 
@@ -22,11 +34,11 @@ Solo es necesario hacer un ```buscaminas.mostrar()``` en la consola, **una vez s
 
 ![Alt Text](images/picar.gif)
 
-:rocket: [Invocación](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L96)
+:rocket: [Invocación](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/e2033139c8581f137b01397a4815004dfa976693/js/gui.js#L93)
 
-:memo: [Función](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L282)
+:memo: [Función](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/e2033139c8581f137b01397a4815004dfa976693/js/gui.js#L272)
 
-:zap: [Aquí se añade el efecto jquery](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L247)
+:zap: [Aquí se añade el efecto jquery](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/e2033139c8581f137b01397a4815004dfa976693/js/gui.js#L145)
 
 
 
@@ -35,11 +47,11 @@ Solo es necesario hacer un ```buscaminas.mostrar()``` en la consola, **una vez s
 
 ![Alt Text](images/marcar.gif)
 
-:rocket: [Invocación](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L108)
+:rocket: [Invocación](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/e2033139c8581f137b01397a4815004dfa976693/js/gui.js#L105)
 
-:memo: [Función](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L316)
+:memo: [Función](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/e2033139c8581f137b01397a4815004dfa976693/js/gui.js#L308)
 
-:zap: [Aquí se añade el efecto jquery](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L324)
+:zap: [Aquí se añade el efecto jquery](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/e2033139c8581f137b01397a4815004dfa976693/js/gui.js#L316)
 
 
 
@@ -49,13 +61,13 @@ Solo es necesario hacer un ```buscaminas.mostrar()``` en la consola, **una vez s
 
 ![Alt Text](images/despejar.gif)
 
-:rocket: [Invocación.](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L111) Pulsación dos botones
+:rocket: [Invocación.](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/e2033139c8581f137b01397a4815004dfa976693/js/gui.js#L108) Pulsación dos botones
 
-:rocket: [Invocación](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L127). Pulsación larga
+:rocket: [Invocación](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/e2033139c8581f137b01397a4815004dfa976693/js/gui.js#L124). Pulsación larga
 
 :memo: [Función](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L187)
 
-:zap: [Aquí se añade el efecto jquery.](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L197)
+:zap: [Aquí se añade el efecto jquery.](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/e2033139c8581f137b01397a4815004dfa976693/js/gui.js#L185)
 
 
 ------------
@@ -66,9 +78,9 @@ Solo es necesario hacer un ```buscaminas.mostrar()``` en la consola, **una vez s
 
 :rocket: Se invoca en la captura de la exception correspondiente.
 
-:memo: [Función](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L355)
+:memo: [Función](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/e2033139c8581f137b01397a4815004dfa976693/js/gui.js#L290)
 
-:zap: [Muestro ventana emergente con Swal](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L299)
+:zap: [Muestro ventana emergente con Swal](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/e2033139c8581f137b01397a4815004dfa976693/js/gui.js#L334)
 
 ------------
 #### Perder
@@ -77,6 +89,6 @@ Solo es necesario hacer un ```buscaminas.mostrar()``` en la consola, **una vez s
 
 :rocket: Se invoca en la captura de la exception correspondiente.
 
-:memo: [Función ](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L355)
+:memo: [Función ](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/e2033139c8581f137b01397a4815004dfa976693/js/gui.js#L290)
 
-:zap: [Muestro ventana emergente con Swal](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L304)
+:zap: [Muestro ventana emergente con Swal](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/e2033139c8581f137b01397a4815004dfa976693/js/gui.js#L334)
