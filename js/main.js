@@ -248,6 +248,12 @@ let buscaminasFuncionalidad = {
    */
   elegirNivel() {
     switch (buscaminasFuncionalidad.nivel.toLowerCase()) {
+      case "test":
+        buscaminasFuncionalidad.filas = 3;
+        buscaminasFuncionalidad.columnas = 3;
+        buscaminasFuncionalidad.numMinas = 4;
+        buscaminasFuncionalidad.numBanderas = 4;
+        break;
       case "facil":
         buscaminasFuncionalidad.filas = 8;
         buscaminasFuncionalidad.columnas = 8;

@@ -164,11 +164,12 @@ let buscaMinasGUI = {
       case "facil":
           buscaMinasGUI.animationInput(input,classs, " inputFacil", effect, delay)
         break;
-
+      case "test":
+          buscaMinasGUI.animationInput(input,classs, " inputTest", effect, delay)
+        break;
       case "intermedio":
           buscaMinasGUI.animationInput(input,classs, " inputIntermedio", effect, delay)
         break;
-
       case "experto":
             buscaMinasGUI.animationInput(input,classs, " inputExperto", effect, delay)
         break;
@@ -195,7 +196,7 @@ let buscaMinasGUI = {
             }
           }
     } catch (e) {
-      buscaMinasGUI.controlException(e);
+      buscaMinasGUI.controlException(e, element);
     }
   },
   /*
@@ -213,6 +214,14 @@ let buscaMinasGUI = {
 
       buscaMinasGUI.actualizaNumBanderas();
 
+
+      if (buscaMinas.flagGanado){
+         $("input").each(function(index, el) {
+           if ($(el).hasClass("violet")){
+             buscaMinasGUI.claseSegunNivel("blanco", $(el))
+           }
+         });
+      }
       let contDelay = 400;
       for (const item of buscaMinas.aperturaCasillas) {
         let fila = item.split("-")[0];
@@ -270,7 +279,7 @@ let buscaMinasGUI = {
               buscaMinasGUI.actualizarGui();
           }
       } catch (e) {
-        buscaMinasGUI.controlException(e);
+        buscaMinasGUI.controlException(e,element);
       }
 
   },
@@ -278,9 +287,10 @@ let buscaMinasGUI = {
   * Control de manejo de mensajes al ganar y perder.
   * @param e exception
   */
-  controlException(e){
+  controlException(e, element){
     buscaMinasGUI.descubrirMinas();
     if (e.message === messagesBuscaminas.msgGanarPartida) {
+      buscaMinasGUI.actualizarGui();
       buscaMinasGUI.comprobarRecord();
       setTimeout(function(){
         buscaMinasGUI.swalVolverAJugar(e.message, "success");
@@ -374,6 +384,7 @@ let buscaMinasGUI = {
   animacionAbrirMinasNivel(message){
     switch (buscaMinas.nivel) {
       case "facil":
+      case "test":
           setTimeout(function(){
             buscaMinasGUI.swalVolverAJugar(message, "error");
           }, 4000);
@@ -381,12 +392,12 @@ let buscaMinasGUI = {
       case "intermedio":
             setTimeout(function(){
               buscaMinasGUI.swalVolverAJugar(message, "error");
-            }, 8000);
+            }, 7000);
         break;
       case "experto":
             setTimeout(function(){
               buscaMinasGUI.swalVolverAJugar(message, "error");
-            }, 12000);
+            }, 11000);
         break;
       default:
         return;
