@@ -21,7 +21,7 @@ Solo es necesario hacer un ```buscaMinas.mostrar()``` en la consola, **una vez s
 
 ------------
 
-Para solucionar esta tediosa tarea, se ha añadido un nivel llamado testeo el cual nos dibuja una cuadrícula de 3x3 y 4 minas, lo cuál es mucho más eficiente a la hora de testear.
+Para solucionar esta **tediosa tarea**, se ha **añadido un nivel llamado testeo** el cual nos **dibuja una cuadrícula de 3x3 y 4 minas**, como se puede comprobar es mucho más eficiente a la hora de **testear**.
 
 ![Alt Text](images/nivelTesteo.gif)
 
