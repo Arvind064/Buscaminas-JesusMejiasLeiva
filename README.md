@@ -13,7 +13,6 @@ Solo es necesario hacer un ```buscaMinas.mostrar()``` en la consola, **una vez s
 
 ![Alt Text](images/mostrarClosure.gif)
 
-------------
 
 ------------
 
