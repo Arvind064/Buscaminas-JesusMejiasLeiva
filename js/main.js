@@ -579,8 +579,6 @@ let buscaminasFuncionalidad = {
 * Closure objeto buscaminas
 */
 
-// ¡¡ NO VEO SENTIDO A UN CLOSURE LOURDES, PUDIENDO USAR EXPORT E IMPORT !! :(
-
 buscaMinas = (function () {
     return buscaminasFuncionalidad;
 })();
