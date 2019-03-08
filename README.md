@@ -66,7 +66,7 @@ Para solucionar esta **tediosa tarea**, se ha **añadido un nivel llamado testeo
 
 :memo: [Función](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/master/js/gui.js#L187)
 
-:zap: [Aquí se añade el efecto jquery.](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/e2033139c8581f137b01397a4815004dfa976693/js/gui.js#L185)
+:zap: [Aquí se añade el efecto jquery.](https://github.com/iesgrancapitan-dwec/Buscaminas-JesusMejiasLeiva/blob/e2033139c8581f137b01397a4815004dfa976693/js/gui.js#L195)
 
 
 ------------
